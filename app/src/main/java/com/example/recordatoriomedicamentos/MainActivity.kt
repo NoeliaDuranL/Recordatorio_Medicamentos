@@ -11,24 +11,20 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
 
         drawer = findViewById(R.id.drawer_layout)
-
         toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer.addDrawerListener(toggle)
 
@@ -42,9 +38,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_item_usuario -> {
-                val intent = Intent(this, UsuarioActivity::class.java)
+                Toast.makeText(this, "Ver Perfil", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, VerPerfilActivity::class.java)
                 startActivity(intent)
-                Toast.makeText(this, "Usuario", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_item_medicamentos -> {
                 Toast.makeText(this, "Medicamentos", Toast.LENGTH_SHORT).show()
@@ -69,7 +65,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_item_reporte -> Toast.makeText(this, "Reporte", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_agregar -> Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_alarma -> {
+                Toast.makeText(this, "Alarma", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, AlarmaActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_item_agregar -> {
+                Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, UsuarioActivity::class.java)
+                startActivity(intent)
+            }
+
         }
 
         drawer.closeDrawer(GravityCompat.START)
