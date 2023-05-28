@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="#FF4081"
+        android:gravity="center"
+        android:text="@string/doctores"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageViewDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/doctor_image"
+        android:contentDescription="@string/doctor" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_del_doctor"
+        android:importantForAutofill="no"/>
+
+    <EditText
+        android:id="@+id/editTextMedication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/medicamento"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextDose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/dosis"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/buttonAddDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar_doctor" />
+
+    <LinearLayout
+        android:id="@+id/doctorsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>

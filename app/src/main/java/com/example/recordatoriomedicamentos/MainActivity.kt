@@ -1,17 +1,17 @@
 package com.example.recordatoriomedicamentos
 
-import android.content.ClipData.Item
+import android.content.Intent
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import android.content.Intent
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,18 +40,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.nav_item_usuario -> {
-                // Crea un Intent para iniciar la UsuarioActivity
                 val intent = Intent(this, UsuarioActivity::class.java)
-                startActivity(intent) // Inicia la actividad UsuarioActivity
-
-                // Muestra un mensaje Toast para verificar que se ha hecho clic correctamente
+                startActivity(intent)
                 Toast.makeText(this, "Usuario", Toast.LENGTH_SHORT).show()
             }
-            R.id.nav_item_medicamentos -> Toast.makeText(this, "Medicamentos", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_doctor -> Toast.makeText(this, "Doctor", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_refill -> Toast.makeText(this, "Refill", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_medicamentos -> {
+                Toast.makeText(this, "Medicamentos", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MedicamentosActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_item_horario -> {
+                Toast.makeText(this, "Horarios", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HorariosActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_item_doctor -> {
+                Toast.makeText(this, "Doctores", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DoctorActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_item_refill -> {
+                Toast.makeText(this, "Refill", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, RefillActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_item_reporte -> Toast.makeText(this, "Reporte", Toast.LENGTH_SHORT).show()
             R.id.nav_item_agregar -> Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
         }

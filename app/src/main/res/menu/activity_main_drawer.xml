@@ -11,6 +11,8 @@
         android:title="Refill"/>
     <item android:id="@+id/nav_item_reporte"
         android:title="Reporte"/>
+    <item android:id="@+id/nav_item_horario"
+        android:title="Horario"/>
 
     <item android:id="@+id/nav_item_agregar"
         android:title="Agregar Usuario"/>
