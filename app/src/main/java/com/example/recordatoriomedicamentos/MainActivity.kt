@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -45,7 +46,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
                 Toast.makeText(this, "Usuario", Toast.LENGTH_SHORT).show()
             }
-            R.id.nav_item_medicamentos -> Toast.makeText(this, "Medicamentos", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_medicamentos -> {
+                Toast.makeText(this, "Medicamentos", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MedicamentosActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_item_horario -> {
+                Toast.makeText(this, "Horarios", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, HorariosActivity::class.java)
+                startActivity(intent)
+            }
 
             R.id.nav_item_doctor -> {
                 Toast.makeText(this, "Doctores", Toast.LENGTH_SHORT).show()
