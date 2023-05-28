@@ -2,4 +2,16 @@
     <string name="app_name">Recordatorio Medicamentos</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="nombre_del_medicamento">Nombre del medicamento</string>
+    <string name="agregar">Agregar</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="agregar_medicamento">Agregar Medicamento</string>
+    <string name="doctores">DOCTORES</string>
+    <string name="doctor">doctor</string>
+    <string name="nombre_del_doctor">Nombre del Doctor</string>
+    <string name="medicamento">Medicamento</string>
+    <string name="dosis">Dosis</string>
+    <string name="agregar_doctor">Agregar Doctor</string>
+    <string name="refill">REFILL</string>
+    <string name="nombre_medicamento">Nombre del medicamento</string>
 </resources>
