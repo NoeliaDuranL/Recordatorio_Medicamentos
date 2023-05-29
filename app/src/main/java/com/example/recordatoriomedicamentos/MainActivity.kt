@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
+//import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
