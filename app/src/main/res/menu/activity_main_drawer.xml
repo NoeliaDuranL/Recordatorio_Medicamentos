@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<group>
-    <item android:id="@+id/nav_item_usuario"
-        android:title="Usuario"/>
-    <item android:id="@+id/nav_item_medicamentos"
-        android:title="Medicamentos"/>
-    <item android:id="@+id/nav_item_doctor"
-        android:title="Doctor"/>
-    <item android:id="@+id/nav_item_refill"
-        android:title="Refill"/>
-    <item android:id="@+id/nav_item_reporte"
-        android:title="Reporte"/>
-    <item android:id="@+id/nav_item_horario"
-        android:title="Horario"/>
+    <group>
+        <item android:id="@+id/nav_item_usuario"
+            android:title="Ver Perfil"/>
+        <item android:id="@+id/nav_item_medicamentos"
+            android:title="Medicamentos"/>
+        <item android:id="@+id/nav_item_doctor"
+            android:title="Doctor"/>
+        <item android:id="@+id/nav_item_refill"
+            android:title="Refill"/>
+        <item android:id="@+id/nav_item_reporte"
+            android:title="Reporte"/>
+        <item android:id="@+id/nav_item_alarma"
+            android:title="Alarma"/>
+        <item android:id="@+id/nav_item_horario"
+            android:title="Horario"/>
+        <item android:id="@+id/nav_item_agregar"
+            android:title="Agregar Usuario"/>
 
-    <item android:id="@+id/nav_item_agregar"
-        android:title="Agregar Usuario"/>
-
-</group>
+    </group>
 
 </menu>

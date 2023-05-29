@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F1F9FA"
     tools:context=".UsuarioActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#03A9F4"
+        android:fontFamily="serif"
+        android:text="USUARIO"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp" />
+
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/usuario3"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Nombre"
+        android:textSize="18sp"
+        android:inputType="textCapWords"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/lastNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Apellidos"
+        android:textSize="18sp"
+        android:inputType="textCapWords"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/ageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Edad"
+        android:textSize="18sp"
+        android:inputType="number"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="AÑADIR PERFIL"
+        android:textSize="18sp" />
+
+</LinearLayout>
