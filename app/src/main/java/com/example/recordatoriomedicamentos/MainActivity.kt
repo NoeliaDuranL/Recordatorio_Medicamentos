@@ -3,6 +3,7 @@ package com.example.recordatoriomedicamentos
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -10,14 +11,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
+    val db = Firebase.firestore
+    val TAG = "Datos"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +42,39 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
-        val navigationView: NavigationView = findViewById(R.id.nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
+            val navigationView: NavigationView = findViewById(R.id.nav_view)
+            navigationView.setNavigationItemSelectedListener(this)
+        getData()
+
     }
+
+    private fun getData() {
+
+        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        recyclerview.layoutManager = LinearLayoutManager(this)
+
+        val data = ArrayList<ItemsViewModel>()
+
+        //Log.d(TAG,"Recuperando")
+        db.collection("productos")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    data.add(ItemsViewModel("productos",document.data.get("nombre").toString()))
+                    Log.d(TAG, "${document.id} => ${document.data}")
+
+                }
+
+                val adapter = CustomAdapter(data)
+                recyclerview.adapter = adapter
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
+            }
+    }
+
+
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
