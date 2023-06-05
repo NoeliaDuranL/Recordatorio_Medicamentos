@@ -56,11 +56,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val data = ArrayList<ItemsViewModel>()
 
         //Log.d(TAG,"Recuperando")
-        db.collection("productos")
+        db.collection("Medicamentos")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
-                    data.add(ItemsViewModel("productos",document.data.get("nombre").toString()))
+                    data.add(ItemsViewModel("Medicamentos",document.data.get("nombre").toString()))
                     Log.d(TAG, "${document.id} => ${document.data}")
 
                 }
