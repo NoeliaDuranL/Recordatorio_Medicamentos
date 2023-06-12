@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+
+    private lateinit var getDataButton: Button
 
     val db = Firebase.firestore
     val TAG = "Datos"
@@ -44,11 +47,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             val navigationView: NavigationView = findViewById(R.id.nav_view)
             navigationView.setNavigationItemSelectedListener(this)
-        getData()
+
+        getDataButton = findViewById(R.id.button_get_data)
+        getDataButton.setOnClickListener {
+            getData()
+        }
 
     }
 
-    private fun getData() {
+    fun getData() {
 
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerview.layoutManager = LinearLayoutManager(this)
@@ -106,6 +113,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_item_reporte -> Toast.makeText(this, "Reporte", Toast.LENGTH_SHORT).show()
+
+            R.id.nav_item_alarma-> {
+                Toast.makeText(this, "Alarma", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, AlarmaActivity::class.java)
+                startActivity(intent)
+            }
+
             R.id.nav_item_agregar -> Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
         }
 

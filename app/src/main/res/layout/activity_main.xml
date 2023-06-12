@@ -28,6 +28,14 @@
             tools:itemCount="5"
             tools:listitem="@layout/card_view_design" />
 
+        <Button
+            android:id="@+id/button_get_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mostrar_datos"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
