@@ -1,6 +1,7 @@
 package com.example.recordatoriomedicamentos
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
@@ -86,7 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_item_usuario -> {
-                val intent = Intent(this, UsuarioActivity::class.java)
+                val intent = Intent(this, VerPerfilActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this, "Usuario", Toast.LENGTH_SHORT).show()
             }
@@ -120,7 +121,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
 
-            R.id.nav_item_agregar -> Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
+            R.id.nav_item_agregar -> {
+                Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, UsuarioActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         drawer.closeDrawer(GravityCompat.START)
@@ -143,4 +148,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
