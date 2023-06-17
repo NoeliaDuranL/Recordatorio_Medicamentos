@@ -17,17 +17,16 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp" />
 
-    <EditText
-        android:id="@+id/editTextText7"
+    <Spinner
+        android:id="@+id/medicamentoSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="text" />
+        android:layout_marginEnd="16dp" />
+
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fecha Inicio:"
@@ -35,22 +34,15 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp" />
 
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha "
-        android:textSize="25sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp" />
 
-    <Button
-        android:id="@+id/btnDatePicker"
+    <EditText
+        android:id="@+id/editTextFechaInicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Agregar Fecha"
-        android:textAllCaps="false" />
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="date" />
 
     <TextView
         android:id="@+id/textView9"
@@ -67,14 +59,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
+        android:ems="9"
         android:inputType="text" />
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="match_parent"
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Agregar Horario" />
+        android:layout_gravity="center_horizontal"
+        android:scaleX="0.8"
+        android:scaleY="0.8" />
+    <ToggleButton
+        android:id="@+id/toggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="9dp"
+        android:checked="false"
+        android:onClick="onToggleClicked" />
 
 </LinearLayout>

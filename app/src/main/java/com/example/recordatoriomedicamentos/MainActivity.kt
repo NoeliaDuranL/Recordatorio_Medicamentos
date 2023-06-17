@@ -97,12 +97,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
 
-            R.id.nav_item_horario -> {
-                Toast.makeText(this, "Horarios", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, HorariosActivity::class.java)
-                startActivity(intent)
-            }
-
             R.id.nav_item_doctor -> {
                 Toast.makeText(this, "Doctores", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, DoctorActivity::class.java)

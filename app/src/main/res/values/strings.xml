@@ -14,5 +14,12 @@
     <string name="agregar_doctor">Agregar Doctor</string>
     <string name="refill">REFILL</string>
     <string name="nombre_medicamento">Nombre del medicamento</string>
-    <string name="mostrar_datos">MOSTRAR DATOS</string>
+
+    <string-array name="medicamentos_array">
+        <item>Medicamento 1</item>
+        <item>Medicamento 2</item>
+        <item>Medicamento 3</item>
+
+        <!-- Agrega más elementos según tus necesidades -->
+    </string-array>
 </resources>
