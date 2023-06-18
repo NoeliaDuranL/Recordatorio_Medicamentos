@@ -12,6 +12,7 @@ class MedicamentosActivity : AppCompatActivity() {
     private lateinit var buttonGuardar: Button  // Botón para guardar el medicamento
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicamentos)
 

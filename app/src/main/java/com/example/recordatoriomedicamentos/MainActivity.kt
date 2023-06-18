@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)
 
@@ -52,6 +51,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getDataButton = findViewById(R.id.button_get_data)
         getDataButton.setOnClickListener {
             getData()
+        }
+
+        val VerAlarmas: Button = findViewById(R.id.buttonVerAlarmas)
+        VerAlarmas.setOnClickListener {
+            val intent = Intent(this, AlarmasProgramadasActivity::class.java)
+            startActivity(intent)
         }
 
     }

@@ -9,73 +9,35 @@
     tools:context=".AlarmaActivity">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medicamento:"
-        android:textSize="25sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp" />
-
-    <Spinner
-        android:id="@+id/medicamentoSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
-
-
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha Inicio:"
-        android:textSize="25sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp" />
-
-
-    <EditText
-        android:id="@+id/editTextFechaInicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="date" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="¿Cuantos días?"
-        android:textSize="25sp" />
-
-    <EditText
-        android:id="@+id/editTextText11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="9"
-        android:inputType="text" />
+        android:text="Recordatorio con Alarma"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp" />
 
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:scaleX="0.8"
-        android:scaleY="0.8" />
-    <ToggleButton
-        android:id="@+id/toggleBtn"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonSetAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Programar Alarma"
         android:layout_gravity="center"
-        android:layout_margin="9dp"
-        android:checked="false"
-        android:onClick="onToggleClicked" />
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonVerAlarmas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Alarmas Programadas"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
+
+
 
 </LinearLayout>

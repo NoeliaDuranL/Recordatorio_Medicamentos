@@ -3,7 +3,7 @@
     android:id="@+id/nav_header"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#211F20"
+    android:background="#02315E"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -24,6 +24,7 @@
         android:layout_height="match_parent"
         android:paddingTop="18dp"
         android:text="Recordatorio Medicamentos"
+        android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
