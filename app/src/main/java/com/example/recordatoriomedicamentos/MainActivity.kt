@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
-        toolbar.title = ""
+        toolbar.title = "Recordatorios Médicos💊"
         setSupportActionBar(toolbar)
 
         drawer = findViewById(R.id.drawer_layout)

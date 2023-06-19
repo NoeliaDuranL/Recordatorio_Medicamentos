@@ -32,9 +32,16 @@
             android:id="@+id/buttonVerAlarmas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver alarmas"
+            android:text="Ver alarmas ⏰"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="185dp"
+            android:layout_height="223dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/medicine_pills_cartoon_icon_illu" />
 
     </LinearLayout>
 

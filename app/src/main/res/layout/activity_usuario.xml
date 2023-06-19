@@ -13,9 +13,10 @@
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="#03A9F4"
+        android:background="#02315E"
         android:fontFamily="serif"
         android:text="USUARIO"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:gravity="center_vertical"
         android:paddingStart="16dp" />

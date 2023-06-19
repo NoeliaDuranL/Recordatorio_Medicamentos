@@ -22,9 +22,9 @@ class UsuarioActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
 
-        nameEditText.setText(sharedPreferences.getString("NAME", ""))
-        lastNameEditText.setText(sharedPreferences.getString("LAST_NAME", ""))
-        ageEditText.setText(sharedPreferences.getString("AGE", ""))
+        nameEditText.setText(sharedPreferences.getString("Nombre", ""))
+        lastNameEditText.setText(sharedPreferences.getString("Apellido", ""))
+        ageEditText.setText(sharedPreferences.getString("Edad", ""))
 
         saveButton.setOnClickListener {
             val name = nameEditText.text.toString()
@@ -32,9 +32,9 @@ class UsuarioActivity : AppCompatActivity() {
             val age = ageEditText.text.toString()
 
             val editor = sharedPreferences.edit()
-            editor.putString("NAME", name)
-            editor.putString("LAST_NAME", lastName)
-            editor.putString("AGE", age)
+            editor.putString("Nombre", name)
+            editor.putString("Apellido", lastName)
+            editor.putString("Edad", age)
             editor.apply()
 
             val intent = Intent(this, VerPerfilActivity::class.java)
@@ -42,3 +42,4 @@ class UsuarioActivity : AppCompatActivity() {
         }
     }
 }
+

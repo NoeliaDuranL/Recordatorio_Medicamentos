@@ -19,7 +19,8 @@
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="#03A9F4"
+        android:background="#02315E"
+        android:textColor="@android:color/white"
         android:fontFamily="serif"
         android:text="USUARIO"
         android:textSize="24sp"
@@ -61,3 +62,4 @@
 
 
 </LinearLayout>
+

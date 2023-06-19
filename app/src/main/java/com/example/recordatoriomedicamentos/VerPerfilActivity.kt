@@ -21,11 +21,11 @@ class VerPerfilActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
 
-        val name = sharedPreferences.getString("NAME", "")
-        val lastName = sharedPreferences.getString("LAST_NAME", "")
-        val age = sharedPreferences.getString("AGE", "")
+        val name = sharedPreferences.getString("Nombre", "")
+        val lastName = sharedPreferences.getString("Apellido", "")
+        val age = sharedPreferences.getString("Edad", "")
 
-        val message = "Name: $name\nLast Name: $lastName\nAge: $age"
+        val message = "Nombre: $name\nApellido: $lastName\nEdad: $age"
         textView.text = message.orEmpty()
 
         backButton.setOnClickListener {
