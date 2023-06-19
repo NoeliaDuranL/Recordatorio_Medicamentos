@@ -9,12 +9,10 @@
             android:title="Medicamentos"/>
         <item android:id="@+id/nav_item_doctor"
             android:title="Doctor"/>
-        <item android:id="@+id/nav_item_refill"
-            android:title="Refill"/>
-        <item android:id="@+id/nav_item_reporte"
-            android:title="Reporte"/>
         <item android:id="@+id/nav_item_agregar"
             android:title="Agregar Usuario"/>
+        <item android:id="@+id/nav_item_ver_bd"
+            android:title="Ver Base de Datos"/>
 
     </group>
 

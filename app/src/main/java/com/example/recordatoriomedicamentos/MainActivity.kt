@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
 
-    private lateinit var getDataButton: Button
+
 
     val db = Firebase.firestore
     val TAG = "Datos"
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_main)
+        toolbar.title = ""
         setSupportActionBar(toolbar)
 
         drawer = findViewById(R.id.drawer_layout)
@@ -48,14 +50,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val navigationView: NavigationView = findViewById(R.id.nav_view)
             navigationView.setNavigationItemSelectedListener(this)
 
-        getDataButton = findViewById(R.id.button_get_data)
-        getDataButton.setOnClickListener {
-            getData()
-        }
-
         val VerAlarmas: Button = findViewById(R.id.buttonVerAlarmas)
         VerAlarmas.setOnClickListener {
             val intent = Intent(this, AlarmasProgramadasActivity::class.java)
+            startActivity(intent)
+        }
+
+        val fabButton = findViewById<FloatingActionButton>(R.id.app_bar_button)
+        fabButton.setOnClickListener {
+            Toast.makeText(this, "Agregar alarma", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AlarmaActivity::class.java)
             startActivity(intent)
         }
 
@@ -107,12 +111,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, DoctorActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_item_refill -> {
-                Toast.makeText(this, "Refill", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, RefillActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.nav_item_reporte -> Toast.makeText(this, "Reporte", Toast.LENGTH_SHORT).show()
 
             R.id.nav_item_alarma-> {
                 Toast.makeText(this, "Alarma", Toast.LENGTH_SHORT).show()
@@ -124,6 +122,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Agregar Usuario", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, UsuarioActivity::class.java)
                 startActivity(intent)
+            }
+
+            R.id.nav_item_ver_bd -> {
+                Toast.makeText(this, "Ver Base de Datos", Toast.LENGTH_SHORT).show()
+                getData()
             }
         }
 
